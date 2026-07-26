@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-image: url("assets/bg.png");
+        background-size: 15% auto;
+      }
+
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        border: 0px;
+      }
+
+      img {
+        display: block;
+        max-inline-size: 100%;
+      }
+
+      .button1 {
+        background-image: url("./assets/letter1.png");
+        width: 512px;
+        height: 512px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .button2 {
+        background-image: url("./assets/letter2.png");
+        width: 512px;
+        height: 512px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .yippee {
+        width: 128px;
+        height: 20px;
+        background-image: linear-gradient(to right, #f09819 0%, #edde5d 51%);
+        border-radius: 10px;
+        cursor: pointer;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <img
+        src="./assets/happy graduation rina.gif"
+        alt="happy graduation, rina!"
+        style="size: 40% auto" />
+    </div>
+
+    <div class="center">
+      <button id="letterBtn" class="button1" onclick="changeLetter()"></button>
+    </div>
+
+    <script>
+      function changeLetter() {
+        const btn = document.getElementById("letterBtn");
+
+        if (btn.classList.contains("button1")) {
+          btn.classList.remove("button1");
+          btn.classList.add("button2");
+        } else {
+          btn.classList.remove("button2");
+          btn.classList.add("button1");
+        }
+
+        const audio = new Audio("./assets/turn.mp3");
+        audio.play();
+      }
+    </script>
+
+    <div class="center">
+      <button id="audioYippee" class="yippee" onclick="playAudio()">
+        congrats gang
+      </button>
+    </div>
+
+    <script>
+      function playAudio() {
+        const btn = document.getElementById("audioYippee");
+        const audio = new Audio("./assets/yippee.mp3");
+        audio.play();
+      }
+    </script>
+  </body>
+</html>
